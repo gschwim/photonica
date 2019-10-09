@@ -1,0 +1,525 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"from",
+				"from_number"
+			],
+			[
+				"resp",
+				"resp_message"
+			],
+			[
+				"send",
+				"sendCommand"
+			],
+			[
+				"Zx",
+				"ZXRootScreen"
+			],
+			[
+				"ZX",
+				"ZXClientApp"
+			],
+			[
+				"start",
+				"start_record"
+			],
+			[
+				"camera",
+				"camera"
+			],
+			[
+				"edf",
+				"edf_file"
+			],
+			[
+				"get",
+				"getTrackerVersion"
+			],
+			[
+				"Amazin",
+				"AmazingCamera"
+			],
+			[
+				"Ama",
+				"AmazingCamera"
+			],
+			[
+				"ca",
+				"camera_type"
+			],
+			[
+				"tex",
+				"texture_size"
+			],
+			[
+				"text",
+				"text_size"
+			],
+			[
+				"font",
+				"font_size"
+			],
+			[
+				"fo",
+				"font_size"
+			],
+			[
+				"cam",
+				"camera_running"
+			],
+			[
+				"center",
+				"center_y"
+			],
+			[
+				"ce",
+				"center_x"
+			],
+			[
+				"cen",
+				"center_x"
+			],
+			[
+				"sche",
+				"schedule_once"
+			],
+			[
+				"fixdot",
+				"FixDot"
+			],
+			[
+				"display",
+				"display_stimulus"
+			],
+			[
+				"relocate",
+				"relocate_dot"
+			],
+			[
+				"Test",
+				"TestEndScreen"
+			],
+			[
+				"Sc",
+				"ScreenBase"
+			],
+			[
+				"Fix",
+				"FixationInstructionsScreen"
+			],
+			[
+				"pos",
+				"pos_hint"
+			],
+			[
+				"fix",
+				"fixdot_outer"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"size",
+				"size_hint"
+			],
+			[
+				"keep",
+				"keeplist_binoc_y_bias"
+			],
+			[
+				"end",
+				"end"
+			],
+			[
+				"dva",
+				"dvastats"
+			],
+			[
+				"y_acc",
+				"y_accmedian"
+			],
+			[
+				"x_acc",
+				"x_accmedian"
+			],
+			[
+				"xy",
+				"xy_vvmedian"
+			],
+			[
+				"y",
+				"y_vvmedian"
+			],
+			[
+				"calc",
+				"calc_binoc"
+			],
+			[
+				"ry_vv",
+				"ry_vvmedian"
+			],
+			[
+				"by_",
+				"by_session"
+			],
+			[
+				"lab",
+				"label_as_num"
+			],
+			[
+				"rfe",
+				"rfe_ranking"
+			],
+			[
+				"pre",
+				"prep_data"
+			],
+			[
+				"train_",
+				"train_by_trial"
+			],
+			[
+				"dropbox",
+				"dropbox_zx"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "# Byte-compiled / optimized / DLL files\n__pycache__/\n*.py[cod]\n*$py.class\n\n# C extensions\n*.so\n\n# Distribution / packaging\n.Python\nenv/\nbuild/\ndevelop-eggs/\ndist/\ndownloads/\neggs/\n.eggs/\nlib/\nlib64/\nparts/\nsdist/\nvar/\nwheels/\n*.egg-info/\n.installed.cfg\n*.egg\n\n# PyInstaller\n#  Usually these files are written by a python script from a template\n#  before PyInstaller builds the exe, so as to inject date/other infos into it.\n*.manifest\n*.spec\n\n# Installer logs\npip-log.txt\npip-delete-this-directory.txt\n\n# Unit test / coverage reports\nhtmlcov/\n.tox/\n.coverage\n.coverage.*\n.cache\nnosetests.xml\ncoverage.xml\n*.cover\n.hypothesis/\n.pytest_cache/\n\n# Translations\n*.mo\n*.pot\n\n# Django stuff:\n*.log\nlocal_settings.py\n\n# Flask stuff:\ninstance/\n.webassets-cache\n\n# Scrapy stuff:\n.scrapy\n\n# Sphinx documentation\ndocs/_build/\n\n# PyBuilder\ntarget/\n\n# Jupyter Notebook\n.ipynb_checkpoints\n\n# pyenv\n.python-version\n\n# celery beat schedule file\ncelerybeat-schedule\n\n# SageMath parsed files\n*.sage.py\n\n# dotenv\n.env\n\n# virtualenv\n.venv\nvenv/\nENV/\n\n# Spyder project settings\n.spyderproject\n.spyproject\n\n# Sublime project\n.sublime-project\n\n# Rope project settings\n.ropeproject\n\n# mkdocs documentation\n/site\n\n# mypy\n.mypy_cache/\n",
+			"file": ".gitignore",
+			"file_size": 1172,
+			"file_write_time": 132150643499962347,
+			"settings":
+			{
+				"buffer_size": 1208,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"activa",
+				"Virtualenv: Activate"
+			],
+			[
+				"act",
+				"Virtualenv: Activate"
+			],
+			[
+				"lint",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"ac",
+				"Virtualenv: Activate"
+			],
+			[
+				"todo",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"kivy",
+				"Set Syntax: Kivy Syntax"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"acti",
+				"Virtualenv: Activate"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"dea",
+				"Virtualenv: Deactivate"
+			],
+			[
+				"vir",
+				"Virtualenv: Activate"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pak",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/schwim/src/photonica"
+	],
+	"file_history":
+	[
+		"/home/schwim/src/zx_client_ng/.gitignore",
+		"/home/schwim/src/twiller/main.py",
+		"/home/schwim/src/twiller/requirements.txt",
+		"/home/schwim/src/zx_client_ng/main.py",
+		"/home/schwim/src/zx_client_ng/camera.py",
+		"/home/schwim/src/zx_client_ng/zxclient.kv",
+		"/home/schwim/ZXEREX/TECHNOLOGY/software/SR Research/openSesame_plugin_0.3/el_Connect/el_Connect.py",
+		"/home/schwim/Downloads/examples_forPython3.4-3.6/simple.py",
+		"/home/schwim/src/zx_client_ng/buildozer.spec",
+		"/home/schwim/tmp/testes.py",
+		"/home/schwim/src/zx_client_ng/requirements.txt",
+		"/home/schwim/src/zx_client_ng/config.py",
+		"/home/schwim/src/zx_client_ng/screens_tests.kv",
+		"/home/schwim/src/zx_client_ng/stimuli.kv",
+		"/home/schwim/src/zx_client_ng/screens_instructions.kv",
+		"/home/schwim/src/zx_client_ng/testscreens.kv",
+		"/home/schwim/src/zx_client_ng/test.py",
+		"/home/schwim/src/kivy_pong/buildozer.spec",
+		"/home/schwim/src/analysis/classifier_tests.py",
+		"/home/schwim/src/analysis/field_trial_2/ft2_tools.py",
+		"/home/schwim/src/zx/zx/stats.py",
+		"/home/schwim/src/eyedata/eyedata/eyedata.py",
+		"/home/schwim/src/analysis/suny_outcomes_mp.py",
+		"/home/schwim/src/zx/zx/zx.py",
+		"/home/schwim/src/analysis/.gitignore",
+		"/home/schwim/src/analysis/field_trial_2/classifier_tests.py",
+		"/home/schwim/src/analysis/suny_evt_outcomes.py",
+		"/home/schwim/bin/Aladin/Aladin",
+		"/home/schwim/ZXEREX/TECHNOLOGY/Projects/Client NG/Field Trial #2/zx_test_demo_1.html",
+		"/tmp/tmp1TJTFe.html",
+		"/home/schwim/ZXEREX/Greg Schwimer/Home/SUNY/Code/SUNY team code/corrui/Experiments/OculomotorBattery/@OculomotorBatteryAnalysis/OculomotorBatteryAnalysis.m",
+		"/home/schwim/ZXEREX/Greg Schwimer/Home/SUNY/Code/SUNY team code/corrui/corrui.m",
+		"/home/schwim/ZXEREX/Greg Schwimer/Home/SUNY/Code/SUNY team code/corrui/Analysis/Microsaccade/engbert_microsacc.m",
+		"/opt/PixInsight/src/scripts/BatchPreprocessing/BatchPreprocessing-GUI.js",
+		"/home/schwim/docker/dropbox/docker-compose.yaml",
+		"/home/schwim/src/analysis/outcomes.py"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 118.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1118,
+								1118
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Theme - SoDaReloaded/settings/langs/Git.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1086.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 222.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Virtualenv/Python + Virtualenv.sublime-build",
+	"project": "photonica.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				".gitignore"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 394.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
