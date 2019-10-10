@@ -93,7 +93,8 @@ ENV/
 .spyproject
 
 # Sublime project
-.sublime-project
+*.sublime-project
+*.sublime-workspace
 
 # Rope project settings
 .ropeproject
@@ -105,4 +106,4 @@ ENV/
 .mypy_cache/
 
 # csv files
-.csv
+*.csv
