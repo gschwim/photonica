@@ -10,11 +10,12 @@ import os
 
 class SensorData:
 
-    def __init__(self, cropsize=(100, 100)):
+    def __init__(self, cropsize=(100, 100), pedestal=5000,
+                 offset_correction=0):
 
         self.cropsize = cropsize
-        self.pedestal = 5000
-        self.offset_correction = 0
+        self.pedestal = pedestal
+        self.offset_correction = offset_correction
 
 
         # set up the data structures
@@ -22,32 +23,21 @@ class SensorData:
         self.data_set = pd.DataFrame()
 
         # this is for the individual subs as they are read in
-        # self.data_set = pd.DataFrame(columns=[
-        #     'file',                     # file name
-        #     'img_type',                 # frame type - light, dark, bias, flat
-        #     'ff_geometry',              # full frame geometry
-        #     'crop_geometry',            # crop geometry
-        #     'exptime',                  # exposure time
-        #     'ccd_temp',                 # exposure ccd temp
-        #     'data',                     # raw data of crop
-        #     'offset',                   # this is the bias crop signal
-        #     'min',                      # minimum value of the crop
-        #     'max',                      # maximum value of the crop
-        #     'signal',                   # average value of the crop
-        #     'std_dev',                  # standard deviation of the crop
-        #     'sub_signal-offset',    # signal of a single frame - bias offset
-
-            # TODO - this should be in a summary dataframe for each type
-            # 'avg_signal-offset',        # avg signal of multiple frames - bias offset
-
-            # TODO
-            # 'std_dev_delta',
-            # 'Total Noise',
-            # 'Shot + RD',
-            # 'Read DN',
-            # 'FPN',
-            # 'Shot Signal',
-        # ])
+        self.data_set = pd.DataFrame(columns=[
+            'file',                     # file name
+            'img_type',                 # frame type - light, dark, bias, flat
+            'exptime',                  # exposure time
+            'ccd_temp',                 # exposure ccd temp
+            'ff_geometry',              # full frame geometry
+            'crop_geometry',            # crop geometry
+            'offset',                   # this is the bias crop signal
+            'min',                      # minimum value of the crop
+            'max',                      # maximum value of the crop
+            'signal',                   # average value of the crop
+            'std_dev',                  # standard deviation of the crop
+            'signal-offset',            # signal of a single frame - bias offset
+            'data',                     # raw data of crop
+        ])
 
         # # analysis table derived from data_set
         # self.data_summary = pd.DataFrame(columns=[
@@ -86,7 +76,7 @@ class SensorData:
 
         # perform the crop
         crop_center = ((img_data.shape[1] / 2), (img_data.shape[0] / 2))  # center of full image
-        crop_size = units.Quantity((100,100), units.pixel)  # crop to 100x100
+        crop_size = units.Quantity(self.cropsize, units.pixel)  # crop to 100x100
         img_crop = Cutout2D(img_data, crop_center, crop_size)  # makes the crop
 
         # stuff in a pd.Series
@@ -141,9 +131,12 @@ class SensorData:
         offset = self.BiasStats.signal
         readDN = self.BiasStats.std_dev
 
-        # add signal-offset and read(DN) to data_set
+        # add offset, signal-offset, read(DN) to data_set
 
         for temp, val in offset.iteritems():
+            d.loc[d['ccd_temp'] == temp, 'offset'] = \
+                offset[temp]
+
             d.loc[d['ccd_temp'] == temp, 'signal-offset'] = \
                 d.signal - val - self.offset_correction
 
@@ -199,5 +192,5 @@ class SensorData:
             # append to ds
             ds = ds.append(h, ignore_index=True)
 
-        self.data_set = d
-        self.data_summary = ds
+        self.data_set = d.sort_values(by=['ccd_temp', 'exptime'])
+        self.data_summary = ds.sort_values(by=['ccd_temp', 'exptime'])
