@@ -10,7 +10,7 @@ import os
 
 class SensorData:
 
-    def __init__(self, cropsize=(100, 100), pedestal=5000,
+    def __init__(self, cropsize=(100, 100), pedestal=10000,
                  offset_correction=0):
 
         self.cropsize = cropsize
@@ -39,23 +39,23 @@ class SensorData:
             'data',                     # raw data of crop
         ])
 
-        # # analysis table derived from data_set
-        # self.data_summary = pd.DataFrame(columns=[
-        #     'img_type',             # frame type - light, dark, bias, flat
-        #     'ff_geometry',          # full frame geometry
-        #     'crop_geometry',        # crop geometry used
-        #     'exptime',              # exposure time
-        #     'ccd_temp',             # exposure ccd temp
-        #     'offset',               # this is the bias crop signal
-        #     'avg_min',              # data_set.min.mean()
-        #     'avg_max',              # data_set.max.mean()
-        #     'avg_signal',           # data_set.signal.mean()
-        #     'avg_signal-offset'     # data_set
-        #     'total_noise',          # data_set.std_dev.mean()
-        #     'std_dev_delta',        # (sub1 + 5000) - sub2
-        #     'shot+rd',              # std_dev_delta.sqrt()
-
-        #     ])
+        # analysis table derived from data_set
+        #self.data_summary = pd.DataFrame(columns=[
+        self.data_summary_cols = [
+            'ccd_temp',             # exposure ccd temp
+            'exptime',              # exposure time
+            'img_type',             # frame type - light, dark, bias, flat
+            'avg_signal',           # data_set.signal.mean()
+            'avg_signal-offset',    # data_set
+            'avg_std_dev',
+            'delta_std_dev',        # (sub1 + 5000) - sub2
+            'total_noise',          # data_set.std_dev.mean()
+            'shot+read',              # std_dev_delta.sqrt()
+            'read(DN)',
+            'FPN',
+            'sig_shot',
+            'offset_correction'
+            ]
 
     def addFile(self, file):
 
@@ -156,21 +156,24 @@ class SensorData:
             if x[1] < 1:
                 continue
 
+            # extract the rows for the group
+            grp = g.get_group(x)
+
             # create a pd.Series
             h = pd.Series()
             h.loc['ccd_temp'] = x[0]
             h.loc['exptime'] = x[1]
+            h.loc['img_type'] = grp.iloc[0].img_type
 
-            # extract the rows for the group
-            grp = g.get_group(x)
+            # avg_signal-offset
+            h.loc['avg_signal'] = grp['signal'].mean()
+            h.loc['avg_signal-offset'] = grp['signal-offset'].mean()
 
-            # delta_std_dev
+            # avg_std_dev, delta_std_dev
+            h.loc['avg_std_dev'] = grp['std_dev'].mean()
             h.loc['delta_std_dev'] = \
                 ((grp.iloc[-1].loc['data'] + self.pedestal) -
                     grp.iloc[0].loc['data']).std()
-
-            # avg_signal-offset
-            h.loc['avg_signal-offset'] = grp['signal-offset'].mean()
 
             # total_noise
             h.loc['total_noise'] = grp['std_dev'].mean()
@@ -189,8 +192,16 @@ class SensorData:
             h.loc['sig_shot'] = np.sqrt(h.loc['shot+read'] ** 2 -
                                         h.loc['read(DN)'] ** 2)
 
+            # offset correction
+            h.loc['offset_correction'] = self.offset_correction
+
             # append to ds
             ds = ds.append(h, ignore_index=True)
 
         self.data_set = d.sort_values(by=['ccd_temp', 'exptime'])
-        self.data_summary = ds.sort_values(by=['ccd_temp', 'exptime'])
+        # self.data_summary = self.data_summary.append(ds, ignore_index=True) \
+        #     .sort_values(by=['ccd_temp', 'exptime'])
+        self.data_summary = \
+            ds.sort_values(by=['ccd_temp', 'exptime']) \
+            .reindex(columns=self.data_summary_cols)
+
