@@ -29,9 +29,8 @@ def main(datapath, offset_correction, cropsize, pedestal):
     # per-sub stats
     data.data_set.drop(columns=['data']).to_csv('./data_set.csv')
 
-# summary data w/ noise characteristics
+    # summary data w/ noise characteristics
     data.data_summary.to_csv('./data_summary.csv')
-
 
 if __name__ == "__main__":
     sys.exit(main())  # pragma: no cover
