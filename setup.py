@@ -11,7 +11,7 @@ with open('README.md') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', 'numpy>=1.17', 'pandas>=0.25', 'astropy>=3.2' ]
+requirements = ['Click>=7.0', 'numpy>=1.17', 'pandas>=0.25', 'astropy>=3.2']
 
 setup_requirements = [ ]
 

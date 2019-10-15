@@ -32,5 +32,6 @@ def main(datapath, offset_correction, cropsize, pedestal):
     # summary data w/ noise characteristics
     data.data_summary.to_csv('./data_summary.csv')
 
+
 if __name__ == "__main__":
     sys.exit(main())  # pragma: no cover
